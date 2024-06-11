@@ -1,4 +1,4 @@
-import { View, Image, Text, ScrollView} from "react-native";
+import { View, Image, Text, ScrollView, Button} from "react-native";
 const logoImage = require('./../assets/images/adaptive-icon.png')
 
 export default function App() {
@@ -17,6 +17,7 @@ export default function App() {
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est possimus, veritatis dolorum vel asperiores esse voluptatum consectetur culpa, deleniti, tenetur architecto ex ab nobis ipsum velit quia optio voluptas eligendi.
           </Text>
           <Image source={logoImage} style={{width: 300, height:300}}/>
+          <Button title="press" onPress={() => console.log('halo')} color="#e10102" disabled/>
         </ScrollView>
       </View>
   )
