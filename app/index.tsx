@@ -1,28 +1,21 @@
-import { View, Image, Text, ScrollView, Button, Pressable} from "react-native";
+import { View, ScrollView, Button, Modal, Text} from "react-native";
+import { useState } from "react";
+
 const logoImage = require('./../assets/images/adaptive-icon.png')
 
 export default function App() {
+  const [isModalVisible, setModalVisible] = useState(false)
   return (
       <View style={{flex: 1, backgroundColor:"plum", padding: 60,}}>
         <ScrollView>
-          <Pressable onPress={() => console.log('onpres image')} onLongPress={() => console.log('longpres on image')} onPressOut={() => console.log('press out')}>
-             <Image source={logoImage} style={{width: 300, height:300}}/>
-          </Pressable>
-         
-          {/* <Image source={{uri: 'https://repository-images.githubusercontent.com/37153337/9d0a6780-394a-11eb-9fd1-6296a684b124'}} style={{width: 300, height:300}}/> */}
-          {/* <ImageBackground source={logoImage} style={{flex: 1,}}>
-            <Text>Image Text</Text>
-          </ImageBackground> */}
-          <Pressable onPressIn={() => console.log('press in on text')} onPress={() => console.log('press on text')}>
-          <Text>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae sint ut numquam, veniam aut quo dolorem placeat dicta ipsam nobis! Molestiae officia animi accusantium. Sit dolorem odit voluptatem nam a?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nam quo neque similique vel! Consequatur illo dolorum dolore nisi placeat aut repellendus accusantium laboriosam, quisquam minima, tempore, nesciunt possimus in.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptate quisquam numquam iure asperiores officiis consectetur omnis odio quo incidunt, ratione quia molestiae ducimus laudantium odit? Vero aspernatur quis enim.
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est possimus, veritatis dolorum vel asperiores esse voluptatum consectetur culpa, deleniti, tenetur architecto ex ab nobis ipsum velit quia optio voluptas eligendi.
-          </Text>
-          </Pressable>
-          <Image source={logoImage} style={{width: 300, height:300}}/>
-          <Button title="press" onPress={() => console.log('halo')} color="#e10102"/>
+          <Button title="press" onPress={() => setModalVisible(true)} color="#e10102"/>
+          {/* animationType => fade, slide |presentationStyle => formSheet, pageSheet  */}
+          <Modal presentationStyle="pageSheet" animationType="slide" visible={isModalVisible} onRequestClose={() => setModalVisible(false)}>
+               <View style={{flex: 1, backgroundColor:"lightblue", padding: 60,}}>
+                  <Text>Modal Content</Text>
+                  <Button onPress={() => setModalVisible(false)} title="Close" color="red"/>
+               </View>
+          </Modal>
         </ScrollView>
       </View>
   )
