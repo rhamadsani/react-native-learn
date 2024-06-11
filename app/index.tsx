@@ -1,11 +1,17 @@
-import { View, Alert ,Button} from "react-native";
-import Greet from '../components/Greet';
+import { View, Text, StyleSheet } from "react-native";
+// import Greet from '../components/Greet';
 
 export default function App() {
   return (
-      <View style={{flex: 1, backgroundColor:"plum", padding: 60,}}>
-        <Greet name="Rhamad Nursani Sidik"></Greet>
-        <Greet name="Mudzaffar Bilal Sidik"></Greet>
+      <View style={styles.container}>
+        {/* <Greet name="Rhamad Nursani Sidik"></Greet>
+        <Greet name="Mudzaffar Bilal Sidik"></Greet> */}
+        <Text style={styles.title}>Sylesheet API</Text>
       </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {flex: 1, backgroundColor:"plum", padding: 60,},
+  title: {}
+})
