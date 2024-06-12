@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
     // flexDirection: "column-reverse", //column, column-reverse, row, row-reverse
     marginTop: 64,
     borderWidth: 6,
-    borderColor: "red"
+    borderColor: "red" 
   },
 })
