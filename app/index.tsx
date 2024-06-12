@@ -20,7 +20,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column-reverse", //column, column-reverse, row, row-reverse
+    justifyContent: "space-evenly", //flext-start, flext-end, center, space-between, space-around, space-evenly
+    // flexDirection: "column-reverse", //column, column-reverse, row, row-reverse
     marginTop: 64,
     borderWidth: 6,
     borderColor: "red"
